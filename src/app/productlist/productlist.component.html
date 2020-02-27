@@ -1,0 +1,16 @@
+<h1 class="text-center text-warning mt-4">Our Products</h1>
+
+<div class="card-deck row" >
+	<div class="col-4 mb-4" *ngFor="let fish of productlist ; index as productId">
+		<div class="card" style="width: 18rem;">
+  			<img *ngIf="fish.fishName" class="card-img-top" src='{{fish.img}}' alt="Card image cap">
+  			<div class="card-body">
+    			<a [routerLink] = "['/products', productId]" *ngIf="fish.fishName" class="card-title">{{fish.fishName}}</a>
+    			<p *ngIf="fish.fishName" class="card-text">{{fish.description}}</p>
+    			<p *ngIf="fish.fishName" class="card-text">Price: {{fish.price}} €</p>
+    			<a (click)="addToCart(fish)" class="btn btn-primary m-auto">Add to cart</a>
+  			</div>
+		</div>
+	</div>
+</div>
+

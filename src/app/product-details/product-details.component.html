@@ -1,0 +1,14 @@
+<div class="card-deck row" >
+	<div class="col-4 mb-4">
+		<div class="card" style="width: 18rem;">
+  			<img *ngIf="product.fishName" class="card-img-top" src='{{product.img}}' alt="Card image cap">
+  			<div class="card-body">
+    			<p *ngIf="product.fishName" class="card-title">{{product.fishName}}</p>
+    			<p *ngIf="product.fishName" class="card-text">{{product.description}}</p>
+    			<p *ngIf="product.fishName" class="card-text">Price: {{product.price}} €</p>
+    			<a routerLink = '' class="btn btn-primary m-auto">All products</a>
+    			<a (click)="addToCart(product)" class="btn btn-primary m-auto">Add to cart</a>
+  			</div>
+		</div>
+	</div>
+</div>
